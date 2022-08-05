@@ -19,11 +19,15 @@ job = 'Teacher';
 console.log(job); //Teacher
 
 // Variable naming rules
+
 // Variables cannot start with a number or symbol except for the dollar sign ($) or the underscore(_). If you do otherwise, you'll get an error.
 var _3years = 3;
+
 //The same rule is applicable to not using a symbol in the middle of a variable name. Symbols like slash (/).
 var johnMark = 'John and MArk';
+
 // You cannot use reserved JavaScript keywords as variable names. e.g function, delete, if, etc. For instance, using var function = 23; will give unexpected token.
+
 
 /***********
  * Varable mutation and type coercion
@@ -54,6 +58,7 @@ job = 'driver';
 
 //var lastName = prompt('What is his last Name?');
 console.log(firstName + ' ' + lastName); //John Smith
+
 
 /******************
 * Basic Operators
@@ -88,7 +93,7 @@ console.log(johnOlder); //true
 console.log(typeof johnOlder); //Boolean
 console.log(typeof ageJohn); //Number
 console.log(typeof 'Mark is older than John'); //String
-var x; 
+var x;
 console.log(typeof x); //Undefined
 
 /******
@@ -101,9 +106,9 @@ var fullAge = 18;
 
 //Multiple Operators
 var isFullAge = now - yearJohn >= fullAge; //true
- console.log(isFullAge); //John is of full age.
+console.log(isFullAge); //John is of full age.
 
- //Grouping
+//Grouping
 var ageJohn = now - yearJohn;
 var ageMark = 35;
 var average = (ageJohn + ageMark) / 2;
@@ -117,14 +122,96 @@ console.log(x, y);
 
 //More operators
 x *= 2; //x = x * 2
-console.log(x);
+console.log(x); //52
 x += 10; //x = x + 10;
-console.log(x);
+console.log(x); //62
 x++; //x = x + 1, x +=1, and x++ are examples of increment.
-console.log(x);
+console.log(x); //63
 x--;
-console.log(x);
+console.log(x); //62
 
+
+/************************
+ * CODING CHALLENGE 1
+ */
+
+/**
+Mark and John are trying to compare their BMI (Body Mass Index), which is calculated using formula:
+BMI = mass / height^2 = mass / (height * height).
+(mass in kg and height in meter).
+
+1.Store Mark's and John's mass and height in variables.
+2. Calculate both their BMIs.
+3. Create a boolean variable containing information about whether Mark has a higher BMI than John.
+4. Print a string to the console containing the variable from step 3. (Something like "Is Mark's BMI higher than John's? true").
+
+GOODLUCK 
+*/
+
+var massMark = 78; //kg
+var heightMark = 1.69; //meter
+
+var massJohn = 92;
+var heightJohn = 1.95; //meter
+
+var BMIMark = massMark / (heightMark * heightMark);
+var BMIJohn = massJohn / (heightJohn * heightJohn);
+console.log(BMIMark, BMIJohn); //27.30... (for mark) 24.19 (for John)
+
+var markHigherBMI = BMIMark > BMIJohn;
+console.log('Is Mark\'s BMI higher than John\'s? ' + markHigherBMI); //Is Mark's BMI higher than John's? true.
+
+/**********************
+ * If / else statements
+ */
+
+var firstName = 'John';
+var civilStatus = 'single'; //Civil status states whether one is married, single or divorced.
+
+if (civilStatus === 'married') {
+  console.log(firstName + 'is married!'); //When logged into the console, nothing happens, because the if statement happens to be false as John is single and not married.
+} else {
+  console.log(firstName + ' will hopefully marry soon :)'); //John will hopefully marry soon :)
+}
+
+var isMarried = true;
+if (isMarried) {
+  console.log(firstName + ' is married!'); //John is married!
+} else {
+  console.log(firstName + ' will hopefully marry soon :)')
+}
+
+var massMark = 78; //kg
+var heightMark = 1.69; //meter
+
+var massJohn = 92;
+var heightJohn = 1.95; //meter
+
+var BMIMark = massMark / (heightMark * heightMark);
+var BMIJohn = massJohn / (heightJohn * heightJohn);
+
+if (BMIMark > BMIJohn) {
+  console.log('Mark\'s BMI is higher than John\'s. '); //Mark's BMI is higher than John's.
+} else {
+  console.log('John\'s BMI is higher than Mark\'s. ');
+}
+
+/***
+ * Boolean Logic
+ */
+
+var firstName = 'John';
+var age = 310;
+
+if (age < 13) {
+  console.log(firstName + ' is a boy. '); // If John's age is less than 13, he is a boy.
+} else if (age >= 13 && age < 20 ) { // Between 13 and 20 === age >= 13 AND < 20.
+  console.log(firstName + ' is a teenager. '); //If John's age is greater than 13 but not less than 20, he is a teenager.
+} else if (age >= 20 && age < 30) {
+  console.log(firstName + ' is a young man. '); // If John's age is greater than 20 but not less than 30, he is a young man.
+}else {
+  console.log(firstName + ' is a man. '); //If John's age is above 30. he is a man.
+} 
 
 
 
